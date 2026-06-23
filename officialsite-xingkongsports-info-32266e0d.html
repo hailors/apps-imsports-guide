@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空体育 · 让热爱有个落脚的地方</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f6f0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #fffcf9;
+            border-radius: 32px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+            padding: 2.4rem 2rem 3rem;
+        }
+
+        @media (min-width: 640px) {
+            .page {
+                padding: 3.2rem 3rem 4rem;
+            }
+        }
+
+        .opening {
+            font-size: 1.3rem;
+            font-weight: 450;
+            letter-spacing: 0.02em;
+            border-left: 4px solid #b8a58b;
+            padding-left: 1.2rem;
+            margin-bottom: 2.2rem;
+            color: #3e3a34;
+        }
+
+        .opening span {
+            background: #ede6db;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: #3d362d;
+            border-bottom: 1px solid #e5ddd0;
+            padding-bottom: 0.4rem;
+        }
+
+        p {
+            margin-bottom: 1.3rem;
+        }
+
+        .story-block {
+            background: #f3efe8;
+            padding: 1.8rem 1.6rem;
+            border-radius: 24px;
+            margin: 1.8rem 0;
+        }
+
+        .story-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2rem 0 1.8rem;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #ffffff;
+            padding: 1.2rem 1rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid #ece5d9;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: #5b4d3a;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4d4740;
+            margin-bottom: 0;
+        }
+
+        .callout {
+            background: #eae3d7;
+            border-radius: 20px;
+            padding: 1.4rem 1.6rem;
+            margin: 2rem 0;
+            font-size: 0.98rem;
+            border-left: 6px solid #b29b7c;
+        }
+
+        .callout a {
+            color: #2c3a2f;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .callout a:hover {
+            background-color: #d6cbad;
+            text-decoration: none;
+        }
+
+        .faq-taste {
+            margin: 2.4rem 0 1.2rem;
+        }
+
+        .faq-taste details {
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #ddd6c9;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-taste details summary {
+            cursor: pointer;
+            font-weight: 460;
+            color: #4d4236;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .faq-taste details summary::before {
+            content: "▸";
+            display: inline-block;
+            transition: transform 0.2s;
+            color: #b09a7c;
+            font-size: 1.1rem;
+        }
+
+        .faq-taste details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .faq-taste details p {
+            margin: 0.6rem 0 0.2rem;
+            padding-left: 1.5rem;
+            color: #4f4942;
+        }
+
+        .closing-note {
+            background: #f1ece3;
+            border-radius: 40px;
+            padding: 1.6rem 2rem;
+            text-align: center;
+            margin-top: 2.6rem;
+            font-size: 1rem;
+            color: #3a342b;
+        }
+
+        .closing-note a {
+            color: #2b3d31;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .closing-note a:hover {
+            background: #dacfbb;
+            text-decoration: none;
+        }
+
+        .muted-link {
+            color: #7c705e;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #e1d8ca;
+            margin: 2rem 0 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 开场短句 -->
+        <div class="opening">
+            有些地方，天生就适合相聚。<br>
+            不是因为它多耀眼，而是每次抬头，都能看见那片<span>熟悉的星空</span>。
+        </div>
+
+        <!-- 承接段落：星空体育的由来与氛围 -->
+        <p>
+            几年前和朋友聊起，说运动不该只是汗水和计时器，它更像一种日常的呼吸——下班后约场球，周末在山脚碰头，或者独自跑完五公里，坐在长椅上发呆。后来我们遇到了<a href="https://officialsite-xingkongsports.com">星空体育</a>，一个把运动融入生活缝隙的地方。没有太多喧闹的口号，却有踏实的场地、温和的灯光，和一群不着急赶路的人。
+        </p>
+
+        <!-- 故事块 / 具象场景 -->
+        <div class="story-block">
+            <p><strong>记得一个初秋的傍晚</strong>，篮球场边的梧桐叶刚泛黄。一个父亲带着七八岁的儿子，在场边练习传球。儿子总是接不稳，父亲就一遍遍捡球，笑着说“再来”。后来旁边几个年轻人主动加入，教小孩怎么用手腕发力。那一幕没有什么剪辑，但好像比任何宣传片都动人。</p>
+            <p>在<a href="https://officialsite-xingkongsports.com">星空体育</a>，类似的故事时常发生。你可能只是来跑个步，最后却和隔壁道的人聊起了同一款跑鞋；也可能遇到退了休的老师傅，教你几个拉伸的小窍门。运动在这里，变成了一种连接。</p>
+        </div>
+
+        <!-- 特点列表 -->
+        <h2>几个让人舒服的地方</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>不赶时间的节奏</strong>
+                <p>没有刺耳的哨音和倒计时压迫，场地留足热身和放松的空间，你可以按自己的步调来。</p>
+            </div>
+            <div class="feature-item">
+                <strong>灯光与视野</strong>
+                <p>照明经过调试，不眩目、不昏暗；户外区域能看到天空，夜晚总有几颗星隐约可见。</p>
+            </div>
+            <div class="feature-item">
+                <strong>角落里的书与茶</strong>
+                <p>休息区摆了旧杂志、几本运动散文，还有公用保温壶——运动完喝杯温水，像在家里一样自在。</p>
+            </div>
+            <div class="feature-item">
+                <strong>不同水平的人都能融入</strong>
+                <p>从新手到爱好者，没有人会评判你的速度或姿势。偶尔有志愿者做基础指导，全凭自愿。</p>
+            </div>
+        </div>
+
+        <!-- 引用 / 提示块 -->
+        <div class="callout">
+            ⚡ 一个小提示：如果你第一次来，不用急着打卡所有项目。先在跑道或步道上走一圈，看看场地布局，感受一下氛围。很多人说，在<a href="https://officialsite-xingkongsports.com">星空体育</a>“浪费”的半小时，反而是当天最放松的时刻。
+        </div>
+
+        <!-- FAQ 摘要风格 -->
+        <div class="faq-taste">
+            <details>
+                <summary>需要提前预约场地吗？</summary>
+                <p>大部分区域先到先用，高峰时段（工作日晚间、周末下午）热门场地可能需轮候，建议预留弹性。具体规则可留意现场指引或通过<a href="https://officialsite-xingkongsports.com">星空体育</a>相关页面了解。</p>
+            </details>
+            <details>
+                <summary>适合带家人一起来吗？</summary>
+                <p>当然。有儿童活动区、安全软地面，家长可以在一旁休息或慢跑。不少家庭把这里当作周末上午的固定去处。</p>
+            </details>
+            <details>
+                <summary>如果我只是想找个地方坐坐呢？</summary>
+                <p>场边有长椅和树荫，不运动也可以进来。偶尔有人带着笔记本写东西，或者只是看别人投篮——没人会觉得奇怪。</p>
+            </details>
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing-note">
+            <p>运动不该是一个人的苦修，也不该是社交媒体的表演。<br>
+            它像夜空里的星光——不需要多亮，但总在那里。</p>
+            <p style="margin-top: 1rem; font-size: 0.95rem;">
+                欢迎来<a href="https://officialsite-xingkongsports.com">星空体育</a>，用你喜欢的方式动一动。
+            </p>
+        </div>
+
+        <hr>
+        <p style="text-align: center; font-size: 0.8rem; color: #9a8f7e; margin-top: 1.2rem;">
+            星空体育 · 自然而然
+        </p>
+    </div>
+</body>
+</html>

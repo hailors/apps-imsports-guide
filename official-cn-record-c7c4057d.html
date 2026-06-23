@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>星空体育 · 专题介绍</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f0f6f5;
+      color: #1f2e2b;
+      line-height: 1.65;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* hero 横幅 —— 杂志专题式 */
+    .hero {
+      background: linear-gradient(145deg, #e0f2ef 0%, #c3ddd7 100%);
+      border-radius: 2rem 2rem 2rem 2rem;
+      margin: 2rem 0 2.5rem;
+      padding: 3rem 2rem;
+      box-shadow: 0 12px 28px -8px rgba(42, 92, 82, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(68, 148, 126, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0d3b34;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 span {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 380;
+      color: #266b5c;
+      margin-top: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+    .hero p {
+      margin-top: 1.8rem;
+      max-width: 560px;
+      font-size: 1.05rem;
+      color: #1f423b;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 网格卡片 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 20, 16, 0.04);
+      border: 1px solid rgba(100, 160, 140, 0.15);
+      transition: box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px -8px rgba(42, 92, 82, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: #12443b;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+      display: inline-block;
+      border-bottom: 2px solid #87c9bb;
+      padding-bottom: 0.2rem;
+    }
+
+    .card p {
+      margin-top: 0.8rem;
+      color: #2d4b43;
+      font-size: 0.98rem;
+    }
+
+    .card .small-label {
+      display: inline-block;
+      background: #d7ece6;
+      color: #105549;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      margin-top: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    .quote-block {
+      background: #eaf7f3;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 5px solid #2d8c78;
+    }
+    .quote-block p {
+      font-size: 1.02rem;
+      color: #1f3e38;
+    }
+
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 1.8rem 1.8rem 2rem;
+      margin: 2rem 0 1.2rem;
+      border: 1px solid rgba(100, 160, 140, 0.15);
+    }
+    .faq-summary h3 {
+      font-weight: 450;
+      font-size: 1.15rem;
+      color: #12443b;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #c1dbd2;
+      padding-bottom: 0.6rem;
+    }
+    .faq-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #e3efe9;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-item strong {
+      color: #155a4a;
+      font-weight: 500;
+    }
+    .faq-item p {
+      margin-top: 0.3rem;
+      font-size: 0.93rem;
+      color: #37574b;
+    }
+
+    /* 页尾 */
+    .site-footer {
+      margin-top: 3rem;
+      padding: 2rem 0 2.5rem;
+      border-top: 1px solid #c1dbd2;
+      text-align: center;
+    }
+    .site-footer p {
+      font-size: 0.92rem;
+      color: #386b5d;
+    }
+    .site-footer a {
+      color: #155a4a;
+      text-decoration: none;
+      border-bottom: 1px dotted #6baa97;
+    }
+    .site-footer a:hover {
+      border-bottom: 1px solid #155a4a;
+    }
+
+    /* 响应式 平板 & 桌面网格 */
+    @media (min-width: 640px) {
+      .grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        padding: 4rem 3.5rem;
+      }
+      .hero h1 {
+        font-size: 3rem;
+      }
+      .hero h1 span {
+        font-size: 1.2rem;
+      }
+      .grid-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+      .card:first-child {
+        grid-column: span 2;
+      }
+    }
+
+    /* 移动端微调 */
+    @media (max-width: 400px) {
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+    }
+
+    /* 其他装饰 */
+    .highlight-link {
+      color: #1e7a64;
+      font-weight: 470;
+    }
+    .inline-code {
+      background: #e3efe9;
+      border-radius: 6px;
+      padding: 0.1rem 0.4rem;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #a0cfc0, transparent);
+      margin: 1.8rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- 杂志式横幅 hero -->
+    <section class="hero">
+      <h1>
+        再次相会 · 星空体育
+        <span>从熟悉的页面，延续对运动的关注</span>
+      </h1>
+      <p>
+        也许你曾经浏览过，或只是偶然遇见。在收藏夹里记下一个名字，再次打开就像翻开杂志的同一页。<br>
+        这里不追逐口号，只提供持续更新的信息与内容。
+      </p>
+    </section>
+
+    <!-- 三段自然介绍 —— 卡片网格 -->
+    <div class="grid-cards">
+
+      <div class="card">
+        <h2>收藏 · 一种安静的约定</h2>
+        <p>
+          把喜欢的站点加入书签，有时只是顺手的事。但每次重新打开，都是在和自己说：“我对这个领域保有好奇。” 
+          <strong><a href="https://official-cn-xingkongsports.com" style="color:#155a4a;text-decoration:underline;text-underline-offset:3px;">星空体育</a></strong> 
+          正是这样一个适合长期存放书签的地方。页面结构稳定，信息排布清晰，无论隔了多久回来，你都能快速找到感兴趣的部分。
+        </p>
+        <span class="small-label">再次访问 · 熟悉如初</span>
+      </div>
+
+      <div class="card">
+        <h2>持续关注 · 自然的节奏</h2>
+        <p>
+          我们习惯于快速滑动屏幕，但也需要一些可以定期回访的角落。不需要提醒，不必推送，只是偶尔想起时点进去，看看最近的内容或变化。<br>
+          如果你愿意把 
+          <a href="https://official-cn-xingkongsports.com" style="color:#155a4a;text-decoration:underline;text-underline-offset:3px;">星空体育</a> 
+          放在浏览器的书签栏或收藏夹里，它便成了你主动获取信息的一个起点。
+        </p>
+        <span class="small-label">关注但不打扰</span>
+      </div>
+
+      <div class="card">
+        <h2>场景 · 运动与日常</h2>
+        <p>
+          早晨通勤、午间休息、晚间整理——这些零碎时间里，打开熟悉页面像翻看一本专题杂志。没有强目的，却常常有意外收获。
+          星空体育在视觉上采用低饱和蓝绿色调，即使屏幕亮度不高也能舒适阅读。卡片式布局让信息一目了然，移动端同样流畅。
+        </p>
+        <span class="small-label">随时翻开的一页</span>
+      </div>
+
+      <div class="card">
+        <h2>不止是首页</h2>
+        <p>
+          很多人习惯把首页当作入口，然后便不再深究。但一个站的吸引力往往藏在第二、第三屏。下次回来时，不妨多往下翻几页，
+          或者看看导航栏里那些未曾点过的分类。<br>
+          <a href="https://official-cn-xingkongsports.com" style="color:#155a4a;text-decoration:underline;text-underline-offset:3px;">星空体育</a> 
+          的栏目设置始终围绕运动与生活，简洁但有余地。
+        </p>
+        <span class="small-label">探索 · 从书签开始</span>
+      </div>
+    </div>
+
+    <!-- 引用风格段落 -->
+    <div class="quote-block">
+      <p>
+        “收藏一个站点，等于保留一个开放的窗口。你不必每天回来，但它一直在那里，等你下次浏览。”
+      </p>
+    </div>
+
+    <!-- FAQ 摘要 —— 温和回答常见问题 -->
+    <div class="faq-summary">
+      <h3>一些你可能想问的事</h3>
+      <div class="faq-item">
+        <strong>为什么推荐现在收藏？</strong>
+        <p>如果你已经来过一次，却忘记保存书签，再次找到可能要多花几步。顺手收藏，下次回来时就是直达。</p>
+      </div>
+      <div class="faq-item">
+        <strong>页面会经常大变样吗？</strong>
+        <p>风格和结构会保持相对稳定，不会频繁改版。即使有调整，也会保留核心布局和配色体系。</p>
+      </div>
+      <div class="faq-item">
+        <strong>移动端体验如何？</strong>
+        <p>完全适配手机与平板，字体、间距、卡片都在小屏幕上经过优化。你可以在任何设备上打开收藏夹。</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- 页尾 —— 再次提示访问，温和收束 -->
+    <footer class="site-footer">
+      <p>
+        如果你喜欢安静、克制的信息获取方式，不妨将 
+        <a href="https://official-cn-xingkongsports.com">星空体育</a> 
+        加入浏览器书签。下次想找运动相关内容时，它会是你一个可靠的索引。<br>
+        <span style="opacity:0.55; font-size:0.78rem; display:inline-block; margin-top:0.8rem;">内容保持更新 · 无需每次重新搜索</span>
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
